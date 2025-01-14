@@ -31,28 +31,28 @@ This approach does fail if the smart controller is plugged in while the reset bu
 
 The pinout is as follows (assuming T568A terminations):
 #### Main-Motor (purpose and direction from Main's perspective):
-RJ-45 Pin # | T568A color | Purpose | Direction | Notes
----|---|---|---|---
-1|Wh/Gr|GND|Bidirectional|Shared ground reference
-2|Gr|TX|OUTPUT|UART 8N1@9600 baud
-3|Wh/Or|Discrim|INPUT|Tied to GND at Motor
-4|Bl|NC||
-5|Wh/Bl|3V3|OUTPUT|
-6|Or|RX|INPUT|UART 8N1@9600 baud
-7|Wh/Br|Presence|INPUT|Tied to 3V3 at Motor
-8|Br|NC||
+RJ-45 Pin # | T568A color | Pico pin | Purpose | Direction | Notes
+---|---|---|---|---|---
+1|Wh/Gr|GND|GND|Bidirectional|Shared ground reference
+2|Gr|GP0|TX|OUTPUT|UART 8N1@9600 baud
+3|Wh/Or|GP|Discrim|INPUT|Tied to GND at Motor
+4|Bl|NC|NC||
+5|Wh/Bl|3V3OUT|3V3|OUTPUT|
+6|Or|GP1|RX|INPUT|UART 8N1@9600 baud
+7|Wh/Br|GP|Presence|INPUT|Tied to 3V3 at Motor
+8|Br|NC|NC||
 
 #### Main-Button Controller (purpose and direction from Main's perspective):
-RJ-45 Pin # | T568A color | Purpose | Direction | Notes
----|---|---|---|---
-1|Wh/Gr|GND|OUTPUT|
-2|Gr|NC||
-3|Wh/Or|Discrim|INPUT|Tied to 3V3 at Controller
-4|Bl|RESET|INPUT|
-5|Wh/Bl|3V3|OUTPUT|
-6|Or|ARM|INPUT|
-7|Wh/Br|Presence|INPUT|Tied to 3V3 at Controller
-8|Br|RACE|INPUT|
+RJ-45 Pin # | T568A color | Pico pin | Purpose | Direction | Notes
+---|---|---|---|---|---
+1|Wh/Gr|GND|GND|OUTPUT|
+2|Gr|NC|NC||
+3|Wh/Or|GP|Discrim|INPUT|Tied to 3V3 at Controller
+4|Bl|GP|RESET|INPUT|
+5|Wh/Bl|3V3OUT|3V3|OUTPUT|
+6|Or|GP|ARM|INPUT|
+7|Wh/Br|GP|Presence|INPUT|Tied to 3V3 at Controller
+8|Br|GP|RACE|INPUT|
 
 To be created.
 
