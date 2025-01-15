@@ -5807,6 +5807,16 @@
 		)
 		(uuid "1c82c189-e754-4d90-bd4a-3493ae8ca1d1")
 	)
+	(label "PRESWITCH"
+		(at 163.83 29.21 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "205b7ebd-1e9f-4729-8536-5fee01cea988")
+	)
 	(label "CTRL_RACE"
 		(at 43.18 59.69 180)
 		(effects
