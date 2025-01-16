@@ -503,6 +503,10 @@
       {
         "netclass": "Power",
         "pattern": "/PRESWITCH"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/VSYS"
       }
     ]
   },
@@ -511,11 +515,11 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "production/",
+      "plot": "outputs/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
-      "svg": "",
+      "svg": "outputs/",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -609,7 +613,7 @@
     },
     "net_format_name": "",
     "page_layout_descr_file": "",
-    "plot_directory": "",
+    "plot_directory": "outputs/",
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,
