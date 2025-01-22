@@ -57,4 +57,7 @@ RJ-45 Pin # | T568A color | Pico pin | Purpose | Direction | Notes
 
 To be created.
 
-## 
+### Motor Controller Board
+The motor controller is build on an Adafruit Perma-Proto Mini Bonnet. That board is designed for a Pi Zero but I take advantage of internal
+connections to make it work for this board. As a result of this, the labels on the board have no meaning. The schematic and wiring diagrams are in
+/circuit/output. 

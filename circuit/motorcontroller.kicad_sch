@@ -3014,8 +3014,8 @@
 		(uuid "ff42675c-8b1a-41c6-b1bf-4e98cffdf0fb")
 	)
 	(no_connect
-		(at 96.52 80.01)
-		(uuid "05c2f854-0898-4b3d-b13c-9ddd906a3a72")
+		(at 142.24 72.39)
+		(uuid "05df8d6f-c1e9-4b8d-b795-5ef2fa0442be")
 	)
 	(no_connect
 		(at 96.52 92.71)
@@ -3024,6 +3024,10 @@
 	(no_connect
 		(at 96.52 54.61)
 		(uuid "0abbf8d8-861f-4d41-ab91-66f061205b40")
+	)
+	(no_connect
+		(at 96.52 52.07)
+		(uuid "0c9765f9-dc7b-420f-b4e2-332e4d4dd861")
 	)
 	(no_connect
 		(at 96.52 67.31)
@@ -3038,14 +3042,6 @@
 		(uuid "2b6b3de3-4316-4cea-88ee-665cd5a74ce1")
 	)
 	(no_connect
-		(at 142.24 87.63)
-		(uuid "2e8fb0b9-2fdf-40dd-9e8c-37663159bb74")
-	)
-	(no_connect
-		(at 142.24 85.09)
-		(uuid "325bd5ad-d07c-4c65-9eea-0cb926a1977f")
-	)
-	(no_connect
 		(at 96.52 59.69)
 		(uuid "4514a238-751f-4339-9197-ac5d36d8732f")
 	)
@@ -3054,16 +3050,20 @@
 		(uuid "4a7645de-4ea1-4207-b2e6-2f6918e80e03")
 	)
 	(no_connect
+		(at 142.24 64.77)
+		(uuid "52415303-9379-4948-9440-f694251bfd6f")
+	)
+	(no_connect
+		(at 142.24 62.23)
+		(uuid "54c196c5-b1d8-4ac6-afd8-c1b046ea9816")
+	)
+	(no_connect
 		(at 96.52 77.47)
 		(uuid "5837d76f-da43-4237-810e-f7d416e08069")
 	)
 	(no_connect
 		(at 142.24 57.15)
 		(uuid "6074230b-cabc-4dca-86fa-12b0eb6aa546")
-	)
-	(no_connect
-		(at 96.52 62.23)
-		(uuid "6681892e-cfa3-4fee-b245-be0836fbba0e")
 	)
 	(no_connect
 		(at 142.24 92.71)
@@ -3102,16 +3102,16 @@
 		(uuid "d1d4bf2b-ef26-49f3-a459-642946c93dc4")
 	)
 	(no_connect
+		(at 142.24 69.85)
+		(uuid "d8db6dc1-e060-4dd8-9ba4-493f8098f931")
+	)
+	(no_connect
 		(at 96.52 69.85)
 		(uuid "e3d8ba40-d654-45ae-a256-51539e074e53")
 	)
 	(no_connect
-		(at 96.52 82.55)
-		(uuid "ea4359b0-86a6-4d6e-bdf3-22210ec87504")
-	)
-	(no_connect
-		(at 142.24 82.55)
-		(uuid "efc2907c-c8b7-45d7-96fc-6cfcca39af14")
+		(at 142.24 59.69)
+		(uuid "ee86101f-2cf7-44e8-bcfd-611474edcea6")
 	)
 	(no_connect
 		(at 96.52 72.39)
@@ -3408,7 +3408,7 @@
 		(uuid "03694f98-5ec8-4a24-81d1-3821622cedcf")
 	)
 	(label "SERVO_RIGHT"
-		(at 142.24 69.85 0)
+		(at 142.24 82.55 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3418,17 +3418,17 @@
 		(uuid "08ddefe0-1fed-44e0-91db-45f514241cee")
 	)
 	(label "LED_CONN"
-		(at 142.24 62.23 0)
+		(at 96.52 62.23 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "17a315a8-a831-4e7b-b6d9-6a6d1ab5d4fb")
 	)
 	(label "RX"
-		(at 96.52 52.07 180)
+		(at 96.52 82.55 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3468,7 +3468,7 @@
 		(uuid "799667f7-12d2-4f08-b015-accd7aeb276b")
 	)
 	(label "LED_MOTPOS"
-		(at 142.24 59.69 0)
+		(at 142.24 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3508,7 +3508,7 @@
 		(uuid "aaf42d1e-7b52-4c2a-be42-3596a3c33e97")
 	)
 	(label "TX"
-		(at 96.52 49.53 180)
+		(at 96.52 80.01 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3518,7 +3518,7 @@
 		(uuid "b6a59534-991b-41f1-8cd4-ad11991cd626")
 	)
 	(label "SERVO_LEFT"
-		(at 142.24 72.39 0)
+		(at 142.24 85.09 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3528,12 +3528,12 @@
 		(uuid "c41bc259-515f-43f3-b16b-947e1cf5f4b5")
 	)
 	(label "BUZZ"
-		(at 142.24 64.77 0)
+		(at 96.52 49.53 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "e44d1357-28c5-4c12-8740-4b6d78e2b3d2")
 	)
@@ -3672,7 +3672,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 60.96 76.2 90)
+		(at 53.34 76.2 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3681,7 +3681,7 @@
 		(fields_autoplaced yes)
 		(uuid "0919aeec-a756-49c8-8a21-9c2d1722a260")
 		(property "Reference" "R1"
-			(at 60.96 69.85 90)
+			(at 53.34 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3689,7 +3689,7 @@
 			)
 		)
 		(property "Value" "220"
-			(at 60.96 72.39 90)
+			(at 53.34 72.39 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3697,7 +3697,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 60.96 77.978 90)
+			(at 53.34 77.978 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3706,7 +3706,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 60.96 76.2 0)
+			(at 53.34 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3715,7 +3715,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 60.96 76.2 0)
+			(at 53.34 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4196,7 +4196,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 53.34 92.71 180)
+		(at 60.96 92.71 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4205,7 +4205,7 @@
 		(fields_autoplaced yes)
 		(uuid "447d3a51-c002-41f8-a5cf-37b69cf02819")
 		(property "Reference" "D3"
-			(at 54.9275 85.09 0)
+			(at 62.5475 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4213,7 +4213,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 54.9275 87.63 0)
+			(at 62.5475 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4221,7 +4221,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 53.34 92.71 0)
+			(at 60.96 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4230,7 +4230,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 53.34 92.71 0)
+			(at 60.96 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4239,7 +4239,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 53.34 92.71 0)
+			(at 60.96 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4416,7 +4416,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 60.96 92.71 90)
+		(at 53.34 92.71 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4425,7 +4425,7 @@
 		(fields_autoplaced yes)
 		(uuid "5aaf510e-8a19-491e-939a-384e5f35f1c4")
 		(property "Reference" "R2"
-			(at 60.96 86.36 90)
+			(at 53.34 86.36 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4433,7 +4433,7 @@
 			)
 		)
 		(property "Value" "220"
-			(at 60.96 88.9 90)
+			(at 53.34 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4441,7 +4441,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 60.96 94.488 90)
+			(at 53.34 94.488 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4450,7 +4450,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 60.96 92.71 0)
+			(at 53.34 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4459,7 +4459,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 60.96 92.71 0)
+			(at 53.34 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4966,7 +4966,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 53.34 76.2 180)
+		(at 60.96 76.2 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4975,7 +4975,7 @@
 		(fields_autoplaced yes)
 		(uuid "b869c7e7-587a-4e19-9252-257950e75f6e")
 		(property "Reference" "D2"
-			(at 54.9275 68.58 0)
+			(at 62.5475 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4983,7 +4983,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 54.9275 71.12 0)
+			(at 62.5475 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4991,7 +4991,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 53.34 76.2 0)
+			(at 60.96 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5000,7 +5000,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 53.34 76.2 0)
+			(at 60.96 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5009,7 +5009,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 53.34 76.2 0)
+			(at 60.96 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
