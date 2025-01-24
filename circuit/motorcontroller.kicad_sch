@@ -3054,10 +3054,6 @@
 		(uuid "52415303-9379-4948-9440-f694251bfd6f")
 	)
 	(no_connect
-		(at 142.24 62.23)
-		(uuid "54c196c5-b1d8-4ac6-afd8-c1b046ea9816")
-	)
-	(no_connect
 		(at 96.52 77.47)
 		(uuid "5837d76f-da43-4237-810e-f7d416e08069")
 	)
@@ -3068,6 +3064,10 @@
 	(no_connect
 		(at 142.24 92.71)
 		(uuid "80fc6894-55a0-4904-9da8-383054824bb9")
+	)
+	(no_connect
+		(at 96.52 62.23)
+		(uuid "818d0ffb-6a47-4034-af79-59bf69828d67")
 	)
 	(no_connect
 		(at 96.52 57.15)
@@ -3418,12 +3418,12 @@
 		(uuid "08ddefe0-1fed-44e0-91db-45f514241cee")
 	)
 	(label "LED_CONN"
-		(at 96.52 62.23 180)
+		(at 142.24 62.23 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "17a315a8-a831-4e7b-b6d9-6a6d1ab5d4fb")
 	)
