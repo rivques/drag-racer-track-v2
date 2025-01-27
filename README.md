@@ -1,8 +1,21 @@
 # drag-racer-track-v2
 A new and improved version of [mini-drag-racetrack](https://github.com/rivques/mini-drag-racetrack).
 
+## Contact Me
+While this racetrack was designed to be maintainable by people other than me, please don't hesitate to contact me if you run into an issue that these docs don't cover.
+You can open an issue on this repository or email me at `web (at) rivques (dot) dev`.
+
 ## How To Use
 To be written.
+
+## Assembly (from storage)
+
+## Assembly (from scratch)
+### Motor controller
+1. Solder an Adafruit Perma-Proto Bonnet Mini according to the [wiring diagram](circuit/outputs/motorcontrollerwiring.png). [Here](doc-pics/motorcontroller-bottom.jpg) are [some](doc-pics/motorcontroller-top-withoutpico.jpg) [pictures](doc-pics/motorcontroller-top-withpico.jpg) of what it should look like (albeit without the battery and switch).
+2. Print out the (yet-to-be-designed) front pieces.
+3. Mount the servo motors...
+TODO: finish this section
 
 ## Bill Of Materials
 * 2x [Adafruit beam-break 3mm sensors](https://www.adafruit.com/product/2167)
