@@ -281,13 +281,13 @@ class Mainboard:
                         self.error = None
                 # tell the motor what to do
                 if self.state == "IDLE":
-                    self.uart.write(b"UP\n")
+                    self.uart.write(b"U")
                 elif self.state == "ARMED":
-                    self.uart.write(b"DOWN\n")
+                    self.uart.write(b"D")
                 elif self.state == "COUNTDOWN":
-                    self.uart.write(b"DOWN\n")
+                    self.uart.write(b"D")
                 elif self.state == "RACING":
-                    self.uart.write(b"UP\n")
+                    self.uart.write(b"U")
 
     
     async def run(self):
