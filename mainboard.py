@@ -5,6 +5,7 @@ import displayio
 import terminalio
 import adafruit_displayio_ssd1306
 import busio
+import bitbangio
 from adafruit_ht16k33 import segments
 from lib.errors import ErrorType, Error
 import time
@@ -27,7 +28,7 @@ class Mainboard:
         self.last_motor_packet_time = 0
 
         # set up buses
-        i2c = busio.I2C(board.GP21, board.GP22)
+        i2c = busio.I2C(board.GP21, board.GP20)
         self.uart = busio.UART(board.GP0, board.GP1, baudrate=9600)
     
         # error hardware
@@ -35,7 +36,7 @@ class Mainboard:
         self.error_led.direction = digitalio.Direction.OUTPUT
         self.error_led.value = False
         displayio.release_displays()
-        error_display_bus = displayio.I2CDisplay(i2c, device_address=0x3C)
+        error_display_bus = displayio.I2CDisplay(i2c, device_address=0x3D)
         self.error_display = adafruit_displayio_ssd1306.SSD1306(error_display_bus, width=128, height=64)
         self.error_display_text = text_box.TextBox(terminalio.FONT, width=128, height=64, align=text_box.TextBox.ALIGN_CENTER, text="Starting up...")
         self.error_display.root_group = self.error_display_text

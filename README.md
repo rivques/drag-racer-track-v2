@@ -15,7 +15,11 @@ To be written.
 1. Solder an Adafruit Perma-Proto Bonnet Mini according to the [wiring diagram](circuit/outputs/motorcontrollerwiring.png). [Here](doc-pics/motorcontroller-bottom.jpg) are [some](doc-pics/motorcontroller-top-withoutpico.jpg) [pictures](doc-pics/motorcontroller-top-withpico.jpg) of what it should look like (albeit without the battery and switch).
 2. Print out the (yet-to-be-designed) front pieces.
 3. Mount the servo motors...
-TODO: finish this section
+TODO: finish this section once CAD happens
+### Mainboard
+1. If you're using a generic OLED instead of an Adafruit OLED, bridge the jumpers on the mainboard PCB accordingly.
+2. Solder headers and breakout boards to the mainboard PCB according to the [schematic](circuit/outputs/mainboard.pdf). I reccommend soldering female headers to the board for the Pico, RJ45 breakout and OLED but you can choose to solder them directly to the board if you wish.
+3. Run a bodge wire from GP20 on the unused pins header to an SDA pin. This corrects for the board incorrectly wiring GP22 to SDA.
 
 ## Bill Of Materials
 * 2x [Adafruit beam-break 3mm sensors](https://www.adafruit.com/product/2167)
