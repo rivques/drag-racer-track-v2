@@ -5,7 +5,6 @@ import displayio
 import terminalio
 import adafruit_displayio_ssd1306
 import busio
-import bitbangio
 from adafruit_ht16k33 import segments
 from lib.errors import ErrorType, Error
 import time
@@ -28,6 +27,7 @@ class Mainboard:
         self.last_motor_packet_time = 0
 
         # set up buses
+        displayio.release_displays()
         i2c = busio.I2C(board.GP21, board.GP20)
         self.uart = busio.UART(board.GP0, board.GP1, baudrate=9600)
     
@@ -35,15 +35,22 @@ class Mainboard:
         self.error_led = digitalio.DigitalInOut(board.GP15)
         self.error_led.direction = digitalio.Direction.OUTPUT
         self.error_led.value = False
-        displayio.release_displays()
         error_display_bus = displayio.I2CDisplay(i2c, device_address=0x3D)
         self.error_display = adafruit_displayio_ssd1306.SSD1306(error_display_bus, width=128, height=64)
-        self.error_display_text = text_box.TextBox(terminalio.FONT, width=128, height=64, align=text_box.TextBox.ALIGN_CENTER, text="Starting up...")
+        self.error_display_text = text_box.TextBox(terminalio.FONT, width=128, height=64, align=text_box.TextBox.ALIGN_CENTER, text="Starting up...", y=12)
         self.error_display.root_group = self.error_display_text
         
         # time display hardware
-        self.left_time_display = segments.BigSeg7x4(i2c, address=0x70)
-        self.right_time_display = segments.BigSeg7x4(i2c, address=0x71)
+        try:
+            self.left_time_display = segments.BigSeg7x4(i2c, address=0x71)
+        except ValueError:
+            self.error_type = ErrorType.FATAL
+            self.error = Error(100, "Left time display is not found")
+        try:
+            self.right_time_display = segments.BigSeg7x4(i2c, address=0x70)
+        except ValueError:
+            self.error_type = ErrorType.FATAL
+            self.error = Error(101, "Right time display is not found")
         self.starting_leds = []
         for red_pin, green_pin in [(board.GP9, board.GP10), (board.GP11, board.GP12), (board.GP13, board.GP14)]:
             red_led = digitalio.DigitalInOut(red_pin)
@@ -92,15 +99,23 @@ class Mainboard:
         self.motor_discrim = digitalio.DigitalInOut(board.GP2)
         self.motor_discrim.direction = digitalio.Direction.INPUT
         # no pull for motor discrim
-
+    
+    # state for error display
+    last_error_code = 0
+    last_state = "NONE"
     async def run_error_display(self):
         while True:
-            if self.error_type == ErrorType.NONE:
+            if self.error_type == ErrorType.NONE and (self.last_error_code != 0 or self.last_state != self.state):
                 self.error_led.value = False
                 self.error_display_text.text = "Drag Racer Track V2\n"+ self.state
-            else:
+                self.last_error_code = 0
+                self.last_state = self.state
+            elif self.error_type != ErrorType.NONE:
                 self.error_led.value = True
-                self.error_display_text.text = f"{'RECOVERABLE' if self.error_type == ErrorType.RECOVERABLE else "FATAL"} Error: {self.error.error_code}\n{self.error.short_msg}\nSEE DOCS ON GITHUB AT\nrivques/drag-racer-track-v2\nOR AT rivques.dev/chs/drtv2 OR ON\n Wayback Machine AT THOSE URLs"
+                if self.error.error_code != self.last_error_code:
+                    self.last_error_code = self.error.error_code
+                    print("new error")
+                    self.error_display_text.text = f"{'RECOVERABLE' if self.error_type == ErrorType.RECOVERABLE else "FATAL"} Error: Code {self.error.error_code}\n{self.error.short_msg}\nSEE DOCS FOR MORE"
                 if self.error_type == ErrorType.RECOVERABLE:
                     await self.blink_error_led()
             await asyncio.sleep(0)
@@ -159,7 +174,7 @@ class Mainboard:
     async def blink_controller_leds(self):
         last_blink = time.monotonic()
         while True:
-            asyncio.sleep(0)
+            await asyncio.sleep(0)
             if self.controller_state == "UNPLUGGED":
                 self.arm_led.value = True
             else:
@@ -203,9 +218,9 @@ class Mainboard:
                     red_led.value = False
                     green_led.value = False
                 if not self.left_finish_time:
-                    self.left_time_display.print("DnF")
+                    self.left_time_display.print(" DnF")
                 if not self.right_finish_time:
-                    self.right_time_display.print("DnF")
+                    self.right_time_display.print(" DnF")
             elif self.state == "ARMED":
                 self.left_time_display.print("00:00")
                 self.right_time_display.print("00:00")
@@ -292,6 +307,9 @@ class Mainboard:
 
     
     async def run(self):
+        if self.error_type != ErrorType.NONE:
+            print("Error during init")
+            await self.run_error_display() # display an error thatoccurred during init
         error_display_task = asyncio.create_task(self.run_error_display())
         input_task = asyncio.create_task(self.manage_input())
         controller_led_task = asyncio.create_task(self.blink_controller_leds())
