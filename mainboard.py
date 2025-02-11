@@ -190,7 +190,7 @@ class Mainboard:
                         last_blink = time.monotonic()
                 elif self.state == "COUNTDOWN":
                     self.arm_led.value = True
-                    self.race_button.value = True
+                    self.race_led.value = True
                 elif self.state == "RACING":
                     self.arm_led.value = False
                     if last_blink + 0.5 < time.monotonic():
@@ -244,7 +244,7 @@ class Mainboard:
                 self.left_finish_time = 0
                 self.right_finish_time = 0
             elif self.state == "RACING":
-                elapsed = self.race_start_time - time.monotonic()
+                elapsed = time.monotonic() - self.race_start_time
                 if self.left_finish_time:
                     self.left_time_display.print(format_time(self.left_finish_time - self.race_start_time))
                 else:
@@ -272,7 +272,7 @@ class Mainboard:
                         self.error_type = ErrorType.NONE
                         self.error = None
                     # check if discrim is correct
-                    if self.motor_discrim.value == False:
+                    if self.motor_discrim.value == True:
                         if not self.error:
                             self.error_type = ErrorType.RECOVERABLE
                             self.error = Error(301, "Motor port wrong")
