@@ -518,7 +518,7 @@
       "plot": "outputs/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "mainboard.step",
       "svg": "outputs/",
       "vrml": ""
     },
