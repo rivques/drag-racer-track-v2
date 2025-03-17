@@ -42,17 +42,17 @@ class Mainboard:
         
         # time display hardware
         try:
-            self.left_time_display = segments.BigSeg7x4(i2c, address=0x71)
+            self.left_time_display = segments.BigSeg7x4(i2c, address=0x70)
         except ValueError:
             self.error_type = ErrorType.FATAL
             self.error = Error(100, "Left time display is not found")
         try:
-            self.right_time_display = segments.BigSeg7x4(i2c, address=0x70)
+            self.right_time_display = segments.BigSeg7x4(i2c, address=0x71)
         except ValueError:
             self.error_type = ErrorType.FATAL
             self.error = Error(101, "Right time display is not found")
         self.starting_leds = []
-        for red_pin, green_pin in [(board.GP9, board.GP10), (board.GP11, board.GP12), (board.GP13, board.GP14)]:
+        for red_pin, green_pin in [(board.GP9, board.GP12), (board.GP10, board.GP13), (board.GP11, board.GP14)]:
             red_led = digitalio.DigitalInOut(red_pin)
             red_led.direction = digitalio.Direction.OUTPUT
             red_led.value = False
@@ -201,22 +201,22 @@ class Mainboard:
         while True:
             await asyncio.sleep(0)
             if self.state == "RACING":
-                if self.left_beam.value == False:
+                if self.left_beam.value == False and self.left_finish_time == 0:
                     self.left_finish_time = time.monotonic()
-                if self.right_beam.value == False:
+                if self.right_beam.value == False and self.right_finish_time == 0:
                     self.right_finish_time = time.monotonic()
                 if self.left_finish_time > 0 and self.right_finish_time > 0:
                     self.state = "IDLE"
 
     async def run_time_display(self):
         def format_time(seconds):
-            return f"{int(seconds)}:{int(seconds*100%100):02}"
+            return f"{int(seconds):02}:{int(seconds*100%100):02}"
         while True:
             await asyncio.sleep(0)
             if self.state == "IDLE":
                 for red_led, green_led in self.starting_leds:
-                    red_led.value = False
-                    green_led.value = False
+                    red_led.value = True
+                    green_led.value = True
                 if not self.left_finish_time:
                     self.left_time_display.print(" DnF")
                 if not self.right_finish_time:
@@ -225,21 +225,22 @@ class Mainboard:
                 self.left_time_display.print("00:00")
                 self.right_time_display.print("00:00")
                 for red_led, green_led in self.starting_leds:
-                    red_led.value = False
-                    green_led.value = False
+                    red_led.value = True
+                    green_led.value = True
             elif self.state == "COUNTDOWN":
                 # here the standard flow of this loop is broken, this is the entire countdown sequence
-                self.starting_leds[0][0].value = True
+                # also these LEDs are common anode so False is on
+                self.starting_leds[0][0].value = False
                 await asyncio.sleep(0.5)
-                self.starting_leds[1][0].value = True
+                self.starting_leds[1][0].value = False
                 await asyncio.sleep(0.5)
-                self.starting_leds[2][0].value = True
+                self.starting_leds[2][0].value = False
                 await asyncio.sleep(0.5)
                 # RACE STARTS HERE
                 self.state = "RACING"
                 for red_led, green_led in self.starting_leds:
-                    red_led.value = False
-                    green_led.value = True
+                    red_led.value = True
+                    green_led.value = False
                 self.race_start_time = time.monotonic()
                 self.left_finish_time = 0
                 self.right_finish_time = 0

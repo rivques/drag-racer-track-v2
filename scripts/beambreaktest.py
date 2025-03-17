@@ -1,7 +1,7 @@
 import board
 import digitalio
 
-break_beam = digitalio.DigitalInOut(board.GP5)
+break_beam = digitalio.DigitalInOut(board.GP26)
 break_beam.direction = digitalio.Direction.INPUT
 break_beam.pull = digitalio.Pull.UP
 
