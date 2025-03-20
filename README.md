@@ -65,7 +65,7 @@ RJ-45 Pin # | T568A color | Pico pin | Purpose | Direction | Notes
 ---|---|---|---|---|---
 1|Wh/Gr|GND|GND|OUTPUT|
 2|Gr|GP17|LED_RACE|OUTPUT|
-3|Wh/Or|GP8|Discrim|INPUT|Tied to LED_RACE at Controller
+3|Wh/Or|GP8|Discrim|INPUT|Tied to RESET at Controller
 4|Bl|GP4|RESET|INPUT|
 5|Wh/Bl|GP16|LED_ARM|OUTPUT|
 6|Or|GP5|ARM|INPUT|
