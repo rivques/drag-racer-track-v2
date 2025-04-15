@@ -27,7 +27,8 @@ TODO: finish this section once CAD happens
 2. Using a soldering iron, insert the heat-set inserts. It may help to slightly counterbore the holes with a 5/32in bit, to help the inserts seat. It's important that the inserts go in as straight as possible.
 3. Modify the beam-break sensors by carefully drilling out their bolt holes to 1/8 in. Then, for the emitters, terminate their wires with a female DuPont connector. For the receivers, extend their wires to ~320mm and terminate with female DuPont.
 4. Bolt the various electronics onto the 3D-printed frame. The mainboard, motor controller, and LED board are installed on standoffs. 
-
+5. Neaten up the cables with zip ties.
+6. Bolt the pieces together and connect the electronics to the mainboard.
 
 ## Bill Of Materials
 * 2x [Adafruit beam-break 3mm sensors](https://www.adafruit.com/product/2167)
