@@ -155,9 +155,16 @@ class Mainboard:
                             self.error_type = ErrorType.NONE
                             self.error = None
                 # by this point we've confirmed we have the correct cable in the correct port
+                # don't do anything if there's an error
+                if self.error_type != ErrorType.NONE:
+                    continue
+                # ok, _now_ we're free to respond to button presses
                 if self.state == "IDLE":
                     if self.arm_button.value == False:
                         self.state = "ARMED"
+                        # clear times
+                        self.left_finish_time = 0
+                        self.right_finish_time = 0
                     # we can't do anything else in IDLE
                 elif self.state == "ARMED":
                     if self.race_button.value == False:
@@ -166,7 +173,12 @@ class Mainboard:
                         self.state = "IDLE"
                 elif self.state == "COUNTDOWN":
                     if self.reset_button.value == False:
-                        self.state = "IDLE"
+                        # when resetting out of countdown, go back to armed (b/c going to idle would release racers which is prob not user intent)
+                        self.state = "ARMED"
+                        # turn off the LEDs
+                        for red_led, green_led in self.starting_leds:
+                            red_led.value = True
+                            green_led.value = True
                 elif self.state == "RACING":
                     if self.reset_button.value == False:
                         self.state = "IDLE"
@@ -178,20 +190,32 @@ class Mainboard:
             if self.controller_state == "UNPLUGGED":
                 self.arm_led.value = True
             else:
-                if self.state == "IDLE":
+                if self.error_type != ErrorType.NONE:
+                    # alternating fast blinks
+                    if last_blink + 0.1 < time.monotonic():
+                        self.race_led.value = self.arm_led.value
+                        self.arm_led.value = not self.arm_led.value
+                        last_blink = time.monotonic()
+                elif self.state == "IDLE":
+                    # arm blinking
+                    self.race_led.value = False
                     if last_blink + 0.5 < time.monotonic():
                         self.arm_led.value = not self.arm_led.value
                         last_blink = time.monotonic()
-                    self.race_led.value = False
                 elif self.state == "ARMED":
+                    # arm solid, race blinking
                     self.arm_led.value = True
                     if last_blink + 0.5 < time.monotonic():
-                        self.race_led.value = not self.arm_led.value
+                        self.race_led.value = not self.race_led.value
                         last_blink = time.monotonic()
                 elif self.state == "COUNTDOWN":
-                    self.arm_led.value = True
-                    self.race_led.value = True
+                    # synced fast blinking
+                    if last_blink + 0.25 < time.monotonic():
+                        self.arm_led.value = not self.race_led.value
+                        self.race_led.value = not self.race_led.value
+                        last_blink = time.monotonic()
                 elif self.state == "RACING":
+                    # arm off, race blinking
                     self.arm_led.value = False
                     if last_blink + 0.5 < time.monotonic():
                         self.race_led.value = not self.race_led.value
@@ -229,13 +253,20 @@ class Mainboard:
                     green_led.value = True
             elif self.state == "COUNTDOWN":
                 # here the standard flow of this loop is broken, this is the entire countdown sequence
-                # also these LEDs are common anode so False is on
+                # also these LEDs are common anode so False is on and True is off
                 self.starting_leds[0][0].value = False
                 await asyncio.sleep(0.5)
+                if self.state != "COUNTDOWN":
+                    # check if we reset mid-countdown
+                    continue
                 self.starting_leds[1][0].value = False
                 await asyncio.sleep(0.5)
+                if self.state != "COUNTDOWN":
+                    continue
                 self.starting_leds[2][0].value = False
                 await asyncio.sleep(0.5)
+                if self.state != "COUNTDOWN":
+                    continue
                 # RACE STARTS HERE
                 self.state = "RACING"
                 for red_led, green_led in self.starting_leds:
