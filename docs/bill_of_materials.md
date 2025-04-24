@@ -22,9 +22,21 @@
 * 1x [piezo buzzer](https://www.adafruit.com/product/160)
 * 1x [4xAA battery holder](https://www.adafruit.com/product/3859)
 * 1x 9V battery clip
+* 2x Ethernet cables, one at least 13 feet long
 * Assorted DuPont headers
 
 ## 3D-printed parts
+From [the CAD folder](/cad) or [this Onshape document]():
+* end_cap_left
+* end_cap_center
+* end_cap_right
+* start_cap_left
+* start_cap_center
+* start_cap_right
+
+All of these should fit on a Prusa MK4S and can be printed out of PLA. Each should have a fairly obviously correct orientation. They shouldn't need supports.
 
 ## Other parts
 * 12x #4-40 McMaster heat-set inserts
+* Assorted 1/2in #4-40 standoffs
+* Assorted #4-40 bolts (including button caps for the battery pack)

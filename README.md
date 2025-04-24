@@ -5,6 +5,9 @@ A new and improved version of [mini-drag-racetrack](https://github.com/rivques/m
 While this racetrack was designed to be maintainable by people other than me, please don't hesitate to contact me if you run into an issue that these docs don't cover.
 You can open an issue on this repository or email me at `web (at) rivques (dot) dev`.
 
+## Troubleshooting
+See [troubleshooting.md](docs/troubleshooting.md)
+
 ## How to Use
 See [how_to_use.md](docs/how_to_use.md)
 
@@ -16,6 +19,9 @@ See [assembly_from_storage.md](docs/assembly_from_storage.md)
 
 ## Assembly From Scratch
 See [assembly_from_scratch.md](docs/assembly_from_scratch.md)
+
+## CAD
+See [the CAD folder](/cad) or [this Onshape document]().
 
 ## Project Proposal
 Available at [this Google doc](https://docs.google.com/document/d/1fPM3jAb2btpLcQTNEUYPZXAGJ7guPSih1aArkj4l1_s/edit?usp=sharing).
