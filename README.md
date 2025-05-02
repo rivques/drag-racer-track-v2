@@ -1,9 +1,10 @@
 # drag-racer-track-v2
 A new and improved version of [mini-drag-racetrack](https://github.com/rivques/mini-drag-racetrack).
+![A photo of the complete assembly](doc-pics/full_assembly.jpg)
 
 ## Contact Me
 While this racetrack was designed to be maintainable by people other than me, please don't hesitate to contact me if you run into an issue that these docs don't cover.
-You can open an issue on this repository or email me at `web (at) rivques (dot) dev`.
+You can open an issue on this repository, email me at `web (at) rivques (dot) dev`, or check [my website](https://rivques.dev) for my latest contact information.
 
 ## Troubleshooting
 See [troubleshooting.md](docs/troubleshooting.md)
@@ -21,10 +22,10 @@ See [assembly_from_storage.md](docs/assembly_from_storage.md)
 See [assembly_from_scratch.md](docs/assembly_from_scratch.md)
 
 ## CAD
-See [the CAD folder](/cad) or [this Onshape document]().
+See [the CAD folder](cad) or [this Onshape document](https://cvilleschools.onshape.com/documents/214ca204c2fbd1332e8a9828/w/7c57c6410ddb9c7d8c5eff08/e/c34b4d3245393d7aa3c3b2bb).
 
 ## Project Proposal
-Available at [this Google doc](https://docs.google.com/document/d/1fPM3jAb2btpLcQTNEUYPZXAGJ7guPSih1aArkj4l1_s/edit?usp=sharing).
+Available at [this Google doc](https://docs.google.com/document/d/1fPM3jAb2btpLcQTNEUYPZXAGJ7guPSih1aArkj4l1_s/edit?usp=sharing), viewable from a CCS account.
 
 ## Circuit Diagram
 ### Commmunication

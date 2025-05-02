@@ -26,7 +26,7 @@
 * Assorted DuPont headers
 
 ## 3D-printed parts
-From [the CAD folder](/cad) or [this Onshape document]():
+From [the CAD folder](../cad) or [this Onshape document]():
 * end_cap_left
 * end_cap_center
 * end_cap_right

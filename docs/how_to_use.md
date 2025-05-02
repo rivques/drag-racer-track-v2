@@ -1,5 +1,5 @@
 # How to Use
-If something goes wrong at any point, check [the troubleshooting guide](/docs/troubleshooting.md).
+If something goes wrong at any point, check [the troubleshooting guide](../docs/troubleshooting.md).
 ## Setup
 1. Power on both the mainboard and the race controller.
 2. Wait for the mainboard to show IDLE on its display.
