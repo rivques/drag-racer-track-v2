@@ -27,25 +27,11 @@ See [the CAD folder](cad) or [this Onshape document](https://cvilleschools.onsha
 ## Project Proposal
 Available at [this Google doc](https://docs.google.com/document/d/1fPM3jAb2btpLcQTNEUYPZXAGJ7guPSih1aArkj4l1_s/edit?usp=sharing), viewable from a CCS account.
 
-## Circuit Diagram
-### Commmunication
-The three modules communicate over straight-through CAT-5 (aka Ethernet) cable. This is a convenient, flexible multi-conductor cable. 
+## Circuit Diagrams
+Schematics and board layouts are available in the [circuit/outputs](circuit/outputs) directory.
 
-This pinout is constructed to allow near-unambiguous determination by the main processor of 1. if a cable is connected and 2. if the cable is connected to the motors or the screen.
-To do this it can do the following:
-```mermaid
-flowchart TD
-    Start-->
-    Watch7{Watch pin 7}
-    -->|High|Nothing([Nothing Connected])-->
-    Watch7
-    -->|Low|Something[Something Connected]
-    -->Set5[Set 5 HIGH]
-    -->Watch3{Check Pin 3}
-    -->|High|Controller([Connected to Controller])
-    Watch3-->|Low|Motor([Connected to Motor])
-```
-This approach does fail if the smart controller is plugged in while the reset button is pressed. However, it should catch most crossed wires.
+### Commmunication
+The three modules communicate over straight-through CAT-5 (aka Ethernet) cable. This pinout is constructed to allow near-unambiguous determination by the main processor of 1. if a cable is connected and 2. if the cable is connected to the motors or the screen.
 
 The pinout is as follows (assuming T568A terminations):
 #### Main-Motor (purpose and direction from Main's perspective):
@@ -71,10 +57,3 @@ RJ-45 Pin # | T568A color | Pico pin | Purpose | Direction | Notes
 6|Or|GP5|ARM|INPUT|
 7|Wh/Br|GP7|Presence|INPUT|Tied to GND at Controller
 8|Br|GP6|RACE|INPUT|
-
-To be created.
-
-### Motor Controller Board
-The motor controller is build on an Adafruit Perma-Proto Mini Bonnet. That board is designed for a Pi Zero but I take advantage of internal
-connections to make it work for this board. As a result of this, the labels on the board have no meaning. The schematic and wiring diagrams are in
-/circuit/output. 
