@@ -1,5 +1,5 @@
 # Assembly From Scratch
-This document describes how to assemble the racetrack from scratch. If you're just assembling from storage, see [assembly_from_storage.md](docs/assembly_from_storage.md).
+This document describes how to assemble the racetrack from scratch. If you're just assembling from storage, see [assembly_from_storage.md](../docs/assembly_from_storage.md).
 
 ## Parts
 See [the bill of materials](../docs/bill_of_materials.md) for a list of parts.
