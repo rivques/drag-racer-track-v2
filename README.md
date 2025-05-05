@@ -27,11 +27,11 @@ See [the CAD folder](https://github.com/rivques/drag-racer-track-v2/tree/main/ca
 ## Project Proposal
 Available at [this Google doc](https://docs.google.com/document/d/1fPM3jAb2btpLcQTNEUYPZXAGJ7guPSih1aArkj4l1_s/edit?usp=sharing), viewable from a CCS account.
 
-## Circuit Diagrams
-Schematics and board layouts are available in the [circuit/outputs](https://github.com/rivques/drag-racer-track-v2/tree/main/circuit/outputs) directory.
-
 ## Photos
 Various photos of the assembly are available in the [doc-pics](https://github.com/rivques/drag-racer-track-v2/tree/main/doc-pics) directory.
+
+## Circuit Diagrams
+Schematics and board layouts are available in the [circuit/outputs](https://github.com/rivques/drag-racer-track-v2/tree/main/circuit/outputs) directory.
 
 ### Commmunication
 The three modules communicate over straight-through CAT-5 (aka Ethernet) cable. This pinout is constructed to allow near-unambiguous determination by the main processor of 1. if a cable is connected and 2. if the cable is connected to the motors or the screen.
