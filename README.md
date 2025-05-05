@@ -37,7 +37,9 @@ Various photos of the assembly are available in the [doc-pics](https://github.co
 The three modules communicate over straight-through CAT-5 (aka Ethernet) cable. This pinout is constructed to allow near-unambiguous determination by the main processor of 1. if a cable is connected and 2. if the cable is connected to the motors or the screen.
 
 The pinout is as follows (assuming T568A terminations):
+
 #### Main-Motor (purpose and direction from Main's perspective):
+
 RJ-45 Pin # | T568A color | Pico pin | Purpose | Direction | Notes
 ---|---|---|---|---|---
 1|Wh/Gr|GND|GND|Bidirectional|Shared ground reference
@@ -50,6 +52,7 @@ RJ-45 Pin # | T568A color | Pico pin | Purpose | Direction | Notes
 8|Br|NC|NC||
 
 #### Main-Button Controller (purpose and direction from Main's perspective):
+
 RJ-45 Pin # | T568A color | Pico pin | Purpose | Direction | Notes
 ---|---|---|---|---|---
 1|Wh/Gr|GND|GND|OUTPUT|
