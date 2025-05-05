@@ -1,2 +1,2 @@
 # Website configuration
-remote-theme: documentation-theme-jekyll
+theme: jekyll-theme-documentation
