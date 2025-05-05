@@ -29,7 +29,7 @@
 
 ## 3D-printed parts
 
-From [the CAD folder](../cad) or [this Onshape document]():
+From [the CAD folder](https://github.com/rivques/drag-racer-track-v2/tree/main/cad) or [this Onshape document](https://cvilleschools.onshape.com/documents/214ca204c2fbd1332e8a9828/w/7c57c6410ddb9c7d8c5eff08/e/c34b4d3245393d7aa3c3b2bb):
 
 * end_cap_left
 * end_cap_center

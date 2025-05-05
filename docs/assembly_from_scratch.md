@@ -36,6 +36,6 @@ See [the bill of materials](../docs/bill_of_materials.md) for a list of parts.
 5. Neaten up the cables with zip ties.
 6. Bolt the pieces together and connect the electronics to the mainboard according to the silkscreened pinouts.
 
-See [the pictures](../doc-pics/) for several pictures of the final assembly.
+See [the pictures](https://github.com/rivques/drag-racer-track-v2/tree/main/doc-pics) for several pictures of the final assembly.
 
 By this point you have all the subassemblies needed to follow [the assembly from storage instructions](../docs/assembly_from_storage.md).

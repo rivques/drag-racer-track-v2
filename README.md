@@ -22,13 +22,16 @@ See [assembly_from_storage.md](docs/assembly_from_storage.md)
 See [assembly_from_scratch.md](docs/assembly_from_scratch.md)
 
 ## CAD
-See [the CAD folder](cad) or [this Onshape document](https://cvilleschools.onshape.com/documents/214ca204c2fbd1332e8a9828/w/7c57c6410ddb9c7d8c5eff08/e/c34b4d3245393d7aa3c3b2bb).
+See [the CAD folder](https://github.com/rivques/drag-racer-track-v2/tree/main/cad) or [this Onshape document](https://cvilleschools.onshape.com/documents/214ca204c2fbd1332e8a9828/w/7c57c6410ddb9c7d8c5eff08/e/c34b4d3245393d7aa3c3b2bb).
 
 ## Project Proposal
 Available at [this Google doc](https://docs.google.com/document/d/1fPM3jAb2btpLcQTNEUYPZXAGJ7guPSih1aArkj4l1_s/edit?usp=sharing), viewable from a CCS account.
 
 ## Circuit Diagrams
-Schematics and board layouts are available in the [circuit/outputs](circuit/outputs) directory.
+Schematics and board layouts are available in the [circuit/outputs](https://github.com/rivques/drag-racer-track-v2/tree/main/circuit/outputs) directory.
+
+## Photos
+Various photos of the assembly are available in the [doc-pics](https://github.com/rivques/drag-racer-track-v2/tree/main/doc-pics) directory.
 
 ### Commmunication
 The three modules communicate over straight-through CAT-5 (aka Ethernet) cable. This pinout is constructed to allow near-unambiguous determination by the main processor of 1. if a cable is connected and 2. if the cable is connected to the motors or the screen.
