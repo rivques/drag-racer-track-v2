@@ -1,5 +1,7 @@
 # Bill of Materials
+
 ## Electronics
+
 * 1x Mainboard PCB. For KiCad files, see the circuit directory of this repo.
 * 2x [Adafruit beam-break 3mm sensors](https://www.adafruit.com/product/2167)
 * 4x [SparkFun RJ45 breakouts](https://www.sparkfun.com/sparkfun-rj45-breakout.html) with [SparkFun RJ45 conectors](https://www.sparkfun.com/rj45-8-pin-connector.html)
@@ -26,7 +28,9 @@
 * Assorted DuPont headers
 
 ## 3D-printed parts
+
 From [the CAD folder](../cad) or [this Onshape document]():
+
 * end_cap_left
 * end_cap_center
 * end_cap_right
@@ -37,6 +41,7 @@ From [the CAD folder](../cad) or [this Onshape document]():
 All of these should fit on a Prusa MK4S and can be printed out of PLA. Each should have a fairly obviously correct orientation. They shouldn't need supports.
 
 ## Other parts
+
 * 12x #4-40 McMaster heat-set inserts
 * Assorted 1/2in #4-40 standoffs
 * Assorted #4-40 bolts (including button caps for the battery pack)
